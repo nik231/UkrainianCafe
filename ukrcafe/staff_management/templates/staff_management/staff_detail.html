@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "Staff Member Details" %}</h2>
+<p><strong>{% trans "Name" %}:</strong> {{ staff_member.first_name }} {{ staff_member.last_name }}</p>
+<p><strong>{% trans "Position" %}:</strong> {{ staff_member.get_position_display }}</p>
+<p><strong>{% trans "Hire Date" %}:</strong> {{ staff_member.hire_date }}</p>
+<p><strong>{% trans "Phone Number" %}:</strong> {{ staff_member.phone_number }}</p>
+<p><strong>{% trans "Email" %}:</strong> {{ staff_member.email }}</p>
+<p><strong>{% trans "Active" %}:</strong> {% if staff_member.is_active %}{% trans "Yes" %}{% else %}{% trans "No" %}{% endif %}</p>
+<p><strong>{% trans "Hourly Wage" %}:</strong> ${{ staff_member.hourly_wage }}</p>
+<a href="{% url 'staff_update' staff_member.id %}">{% trans "Edit" %}</a>
+<a href="{% url 'staff_list' %}">{% trans "Back to List" %}</a>
+{% endblock %}
