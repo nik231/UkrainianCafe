@@ -7,7 +7,6 @@ class StaffMember(models.Model):
         ('WAITER', _('Waiter')),
         ('CHEF', _('Chef')),
         ('MANAGER', _('Manager')),
-        ('CASHIER', _('Cashier')),
     ]
 
     first_name = models.CharField(_('First Name'), max_length=50)
